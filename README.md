@@ -1,4 +1,5 @@
-# node-GRUD-api
+# remote-control
+
 simple user interface
 
 ## Prerequisites
@@ -10,15 +11,9 @@ simple user interface
 
 ```bash
 $user: git clone {repository URL}
-$user: cd node-GRUD-api
+$user: cd node-remote-control
+
 ```
 
-# GRUD service docs
-
-## Endpoints:
-
-
-  - `GET api/user` - get all users
-  - `GET api/user/:Id` - get the user by id (ex. “/user/123”)
-  - `PUT api/user/:Id` - update user
-  - `DELETE api/user/:Id` - delete user
+# remote-control
+ service docs
