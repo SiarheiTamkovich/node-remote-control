@@ -14,13 +14,17 @@ export const wsServer = () => {
     console.log(`stream from remote address:  ${reg.socket.remoteAddress}`)
 
     ws.on('message', function message(data) {
-      console.log('received: %s', data);
+//      console.log('received: %s', data);
       const command = { 
         name: String(data).split(' ')[0],
         paramX: String(data).split(' ')[1],
         paramY: String(data).split(' ')[2],
       };
-      runCommand(command);
+
+      const run = new runCommand(command);
+      const { x, y } = run.getMouseCoords();
+
+      if (command.name === 'mouse_position') ws.send(`mouse_position ${x},${y}`);
     });
 
     ws.send('Confirmed ');
