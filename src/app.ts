@@ -1,3 +1,4 @@
-import { wsServer } from './web-socket.server.js';
+import 'dotenv/config';
+import { wsServer } from './ws/web-socket.server.js';
 
 wsServer();
