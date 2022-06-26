@@ -1,5 +1,6 @@
 import WebSocket, { WebSocketServer, createWebSocketStream } from 'ws';
-import { runCommand } from '../runCommand/runCommand.js';
+import { runCommand } from '../runCommand/run-command.js';
+import jimp from 'jimp';
 
 export const wsServer = () => {
 
@@ -25,6 +26,11 @@ export const wsServer = () => {
       const { x, y } = run.getMouseCoords();
 
       if (command.name === 'mouse_position') ws.send(`mouse_position ${x},${y}`);
+      if (command.name === 'prnt_scrn') {
+ //       const jimpRead = new jimp;
+ //         jimpRead.read(run.getScreen(x, y))
+        ws.send(`prnt_scrn ${run.getScreen(x, y)}`);
+      }
     });
 
     ws.send('Confirmed ');

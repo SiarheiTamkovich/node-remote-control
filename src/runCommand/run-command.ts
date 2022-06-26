@@ -1,6 +1,7 @@
 import robot from 'robotjs';
 import { commandModel, mousePositionModel } from './command-model.js';
 import { drawCircle, drawRectangle, drawSquare } from './draw.js';
+import { makeScreen } from './make-screen.js';
 
 export class runCommand {
 
@@ -37,5 +38,9 @@ export class runCommand {
 
   getMouseCoords():mousePositionModel {
     return robot.getMousePos();
+  }
+
+  getScreen(x: number, y: number) {
+    return makeScreen(x, y)
   }
 }

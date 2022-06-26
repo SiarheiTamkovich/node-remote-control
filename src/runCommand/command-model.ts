@@ -1,10 +1,10 @@
 export interface commandModel {
-  name: String,
-  paramX: String,
-  paramY: String,
+  name: string,
+  paramX: string,
+  paramY: string,
 }
 
 export interface mousePositionModel {
-  x: Number,
-  y: Number,
+  x: number,
+  y: number,
 }
