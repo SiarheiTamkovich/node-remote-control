@@ -6,7 +6,6 @@ export class runCommand {
 
   constructor (command: commandModel) {
 
-    console.log(command)
     const mousePos = robot.getMousePos();
     const { x, y } = mousePos;
 

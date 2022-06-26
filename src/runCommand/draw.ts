@@ -1,9 +1,13 @@
 import robot from 'robotjs';
 
 export const drawCircle = (x: number, y: number, radius: number) => {
-  console.log(radius)
- // robot.moveMouseSmooth(x, y);
+  robot.moveMouse(x + radius, y);
+  robot.mouseToggle('down');
 
+  for (let i = 0; i <= Math.PI * 2; i += 0.01) {
+    robot.moveMouse(x + (radius * Math.cos(i)), y + (radius * Math.sin(i)));
+  }
+  robot.mouseToggle('up');
 }
 
 export const drawRectangle = (x: number, y: number, width: number, length: number) => {
